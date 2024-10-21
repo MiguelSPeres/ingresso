@@ -15,9 +15,11 @@ function comprar() {
         
         } else if (tipo.value == 'superior') { // Se não, se, tipo do ingresso for igual a supeior.
 
-                comprarSuperior(qtd);
+                comprarSuperior(qtd); // Executa a função de compra de ingresso superior.
 
         } else { // Se não, o tipo do ingresso será igua a inferior.
+
+                comprarInferior(qtd); // Executa a função de compra de ingresso inferior.
 
         }
 
@@ -31,7 +33,7 @@ function comprarPista(qtd) { //Declaração da função comprarPista
         // if (qtd > qtdPista.textContent) {  (Anteior)
         if (qtd > qtdPista) { //Se a quantidade de ingresso solicitada for maior que a quantidade disponível para a pista.
                 
-                alert('Infelizmente não dispomos desta quantidade de ingresso para a pista.'); // aviso de inviabilidade.
+                alert('Infelizmente não dispomos desta quantidade de ingressos para a pista.'); // aviso de inviabilidade.
         
         }       else { // Se não... Subtraia a quantidade comprada do valor disponível.
 
@@ -42,4 +44,34 @@ function comprarPista(qtd) { //Declaração da função comprarPista
                 
                 alert ('Compra realizada com sucesso!') //Menssagem de confirmação de compra.
         }
+}
+
+function comprarSuperior(qtd) {
+        
+        let qtdSuperior = parseInt(document.getElementById('qtd-superior').textContent);
+        if (qtd > qtdSuperior) {
+                
+                alert('Infelizmente não dispomos desta quantidade de ingressos para do tipo: Cadeira supeior.');
+                } else {
+
+                qtdSuperior = qtdSuperior - qtd; // subtrai a quantidade de ingressos do tipo: Cadeira supeior.
+                // qtdPista.textContent = qtdPista; (Anteior)
+
+                document.getElementById('qtd-superior').textContent = qtdSuperior; //Atualiza o valor subtraido na página.
+                
+                alert ('Compra realizada com sucesso!') //Menssagem de confirmação de compra.
+        }
+}
+
+function comprarInferior(qtd) {
+        
+        let qtdInferior = parseInt(document.getElementById('qtd-inferior').textContent);
+        if (qtd > qtdInferior) {
+                
+                alert('Infelizmente não dispomos desta quantidade de ingressos para do tipo: Cadeira inferior.');
+                } else {
+                        qtdInferior = qtdInferior - qtd;
+                        document.getElementById('qtd-inferior').textContent = qtdInferior;
+                        alert ('Compra realizada com sucesso!')
+                }
 }
