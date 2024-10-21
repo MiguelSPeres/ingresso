@@ -12,7 +12,15 @@ function comprar() {
                 
                 // comprarPista (qtd.value);
                 comprarPista(qtd); //Executa a função comprarPista, com o argumento qtd.
+        
+        } else if (tipo.value == 'superior') { // Se não, se, tipo do ingresso for igual a supeior.
+
+                comprarSuperior(qtd);
+
+        } else { // Se não, o tipo do ingresso será igua a inferior.
+
         }
+
 } // Fim da função comprar.
 
 function comprarPista(qtd) { //Declaração da função comprarPista
